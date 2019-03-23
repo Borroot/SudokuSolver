@@ -31,6 +31,7 @@ void print(int board[N][N]){
 		}
 		cout << endl;
 	}
+	cout << endl;
 }
 
 void initUsed(bool used[N]){
