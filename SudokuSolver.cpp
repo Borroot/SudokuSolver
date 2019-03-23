@@ -144,8 +144,8 @@ void solve(int board[N][N], Position *pos){
 			solve(board, pos);
 
 			previousPosition(pos);
-			board[pos->y][pos->x] = temp;
 		}
+		board[pos->y][pos->x] = temp;
 	}	
 }
 
