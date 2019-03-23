@@ -138,14 +138,13 @@ void solve(int board[N][N], Position *pos){
 		solve(board, pos);
 		previousPosition(pos);
 	}else{
-		int temp = board[pos->y][pos->x];
 		for(int i = 1; i <= N; i++){
 			board[pos->y][pos->x] = i;
 			nextPosition(pos);
 			solve(board, pos);
 			previousPosition(pos);
 		}
-		board[pos->y][pos->x] = temp;
+		board[pos->y][pos->x] = 0;
 	}	
 }
 
