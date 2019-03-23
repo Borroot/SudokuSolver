@@ -142,7 +142,6 @@ void solve(int board[N][N], Position *pos){
 			board[pos->y][pos->x] = i;
 			nextPosition(pos);
 			solve(board, pos);
-
 			previousPosition(pos);
 		}
 		board[pos->y][pos->x] = temp;
