@@ -1,7 +1,11 @@
-make: sudoku_solver
+TARGET = sudoku
 
-sudoku_solver: SudokuSolver.cpp
-	g++ -o SudokuSolver SudokuSolver.cpp
+all: $(TARGET)
 
-clean: 
-	rm SudokuSolver
+$(TARGET) : % : %.cpp
+	$(CXX) -o $@ $^
+
+clean:
+	rm -f $(TARGET)
+
+.PHONY: all clean

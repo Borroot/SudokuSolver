@@ -5,7 +5,7 @@ using namespace std;
 const int N = 9;
 
 struct Position {
-	int x; 
+	int x;
 	int y;
 };
 
@@ -26,7 +26,7 @@ void print(int board[N][N]){
 		for(int x = 0; x < N; x++){
 			if(board[y][x] != 0)
 				cout << board[y][x] << " ";
-			else 
+			else
 				cout << ". ";
 		}
 		cout << endl;
@@ -46,21 +46,21 @@ bool isDouble(int value, bool used[N]){
 	value--;
 	if(used[value])
 		return true;
-	else 
+	else
 		used[value] = true;
 	return false;
 }
 
 bool validSquare(int board[N][N], const int X, const int Y){
 	bool used[N];
-  	initUsed(used);
+	initUsed(used);
 
 	for(int y = Y; y < N/3 + Y; y++){
 		for(int x = X; x < N/3 + X; x++){
 			if(isDouble(board[y][x], used))
 				return false;
 		}
-	}	
+	}
 	return true;
 }
 
@@ -76,7 +76,7 @@ bool validSquares(int board[N][N]){
 
 bool validRows(int board[N][N]){
 	bool used[N];
-  	initUsed(used);
+	initUsed(used);
 
 	for(int y = 0; y < N; y++){
 		for(int x = 0; x < N; x++){
@@ -90,7 +90,7 @@ bool validRows(int board[N][N]){
 
 bool validColumns(int board[N][N]){
 	bool used[N];
-  	initUsed(used);
+	initUsed(used);
 
 	for(int x = 0; x < N; x++){
 		for(int y = 0; y < N; y++){
@@ -145,7 +145,7 @@ void solve(int board[N][N], Position *pos){
 			previousPosition(pos);
 		}
 		board[pos->y][pos->x] = 0;
-	}	
+	}
 }
 
 int main(){
